@@ -1,0 +1,38 @@
+[
+    {
+        "id":1,
+        "Nombre": "Noticia nueva",
+        "Imagen": "/imgs/paisaje.jpg",
+        "Descripcion": "Esta noticia es nueva, trata sobre la prueba de esta vista, se usa como ejemplo y como prueba Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "Noticia": "Esta noticia es nueva, trata sobre la prueba de esta vista, se usa como ejemplo y como prueba. Este texto es más alargado del que se ve en la previsualización ya que sería la noticia mostrandosé en el detalle, saludos",
+        "Fecha": "30/10/2024"
+    },
+    {
+        "id":2,
+        "Nombre": "Noticia nueva",
+        "Imagen": "/imgs/primera.jpg",
+        "Descripcion": "Esta noticia es nueva, trata sobre la prueba de esta vista, se usa como ejemplo y como prueba",
+        "Fecha": "30/10/2024"
+    },
+    {
+        "id":3,
+        "Nombre": "Noticia nueva",
+        "Imagen": "/imgs/primera.jpg",
+        "Descripcion": "Esta noticia es nueva, trata sobre la prueba de esta vista, se usa como ejemplo y como prueba",
+        "Fecha": "30/10/2024"
+    },
+    {
+        "id":4,
+        "Nombre": "Noticia nueva",
+        "Imagen": "/imgs/primera.jpg",
+        "Descripcion": "Esta noticia es nueva, trata sobre la prueba de esta vista, se usa como ejemplo y como prueba",
+        "Fecha": "30/10/2024"
+    },
+    {
+        "id":5,
+        "Nombre": "Noticia nueva",
+        "Imagen": "/imgs/primera.jpg",
+        "Descripcion": "Esta noticia es nueva, trata sobre la prueba de esta vista, se usa como ejemplo y como prueba",
+        "Fecha": "30/10/2024"
+    }
+]

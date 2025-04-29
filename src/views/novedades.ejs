@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta title="Albarracín Parfums - Perfumería de lujo nicho">
+    <meta name="description" content="Perfumes únicos, destacados por la fina selección de materiales y una intención de diseño para que destaques del resto.
+    Comprá Online, envíos a todo CABA">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="icon" href="/imgs/fragancia-cuero-cafe.svg">
+    <title>Albarracin Parfums - Novedades</title>
+    <script defer src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="divMain">
+    <header class="header">
+        <a href="/"><img class="logo" src="/imgs/fragancia-cuero-cafe.svg" alt="perfume CABA-perfumeria-comprar"></a>
+        <br>
+        <nav class="navbar">
+            <ol class="olNavbar">
+                <li><button class="liNavbar"><a href="/" class="buttonAnchor">Inicio</a></button></li>
+                <li><button class="liNavbar"><a href="/Perfumes" class="buttonAnchor">Perfumes</a></button></li>
+                <li><button class="liNavbar"><a href="/Sobre-nosotros" class="buttonAnchor">Sobre nosotros</a></button></li>
+                <li><button class="liNavbar"><a href="/Novedades" class="buttonAnchor">Novedades</a></button></li>
+                <li><button class="liNavbar"><a href="/Contacto" class="buttonAnchor">Contacto</a></button></li>
+                <a href="https://www.instagram.com/albarracinparfums/" target="_blank"><img  class="igImgHeader" src="/imgs/Sempiterno-Perfume 50ml.svg"></a>
+            </ol>
+        </nav>
+    </header>
+
+    <div class="textNews">
+        <h1 class="h1Novedades">Novedades</h1>
+        <h2 class="h2Novedades">¡Conocenos un poco más!<br>Vamos a estar subiendo noticias de donde estuvimos o novedades en los productos</h2>
+    </div>
+
+    <div class="slider">
+        <div class="slide-track">
+
+            <% for( let i = 0; i < novedades.length; i++ ) { %>
+                <section class="slider">
+                <img class="imgNewsCarru" src="<%= novedades[i].Imagen %>" alt="">
+                </section>        
+            <%}%>
+            </div>
+        </div>
+    </div>
+
+    <div class="news">
+        <% for( let i = 0; i < novedades.length; i++ ) { %>
+            <section class="boxNews">
+            <div class="infoNews">
+            <img class="imgNews" src="<%= novedades[i].Imagen %>" alt="">
+            <div>
+            <h2 class="h2News"><%= novedades[i].Nombre %></h2>
+            <h3 class="h3News"><%= novedades[i].Descripcion %></h3>
+            <a href="/novedades/<%=novedades[i].id%>" class="anchorButtonNews"><button class="buttonNovedades">Saber más</button></a>
+            <h4 class="h4News"><%= novedades[i].Fecha %></h4>     
+            </div>
+            </div> 
+            </section>        
+        <%}%>
+    </div>
+
+    <footer class="footer">
+        <img src="/imgs/prueba1.png" alt="" class="imgFooter">
+        <div class="divFooter">
+        <a href="https://www.instagram.com/albarracinparfums/" target="_blank"><img  class="igImg" src="/imgs/Sempiterno-Perfume 50ml.svg"></a>
+        <h3 class="h3Footer2">2025 © Albarracín Parfums</h3>
+        </div>
+    </footer>
+    </div>
+</body>
+</html>
