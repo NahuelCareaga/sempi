@@ -16,7 +16,7 @@ router.get('/novedades/:id', controller.detalleNovedades);
 
 router.get('/contacto', controller.contacto);
 
-router.get('/pagoCliente', controller.pagoCliente );
+router.get('/pagoCliente/:dni', controller.pagoCliente );
 
 router.get('/pagoNoCliente', controller.pagoNoCliente );
 

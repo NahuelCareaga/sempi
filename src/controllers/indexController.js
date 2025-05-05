@@ -44,18 +44,20 @@ const controller ={
         contacto: (req,res) => {
             res.render("contacto");
         },
-
-        pagoCliente: (req,res) => {
-            res.render("pagoCliente");
-        },
+        
+        register: (req, res) => {
+            res.render('register');
+        }, 
 
         pagoNoCliente: (req,res) => {
             res.render("pagoNoCliente");
         },
 
-        register: (req, res) => {
-            res.render('register');
-        }, 
+        pagoCliente: (req,res) => {
+
+         res.render('pagoCliente');
+         
+        },
 
         registerPOST: async (req, res) => {
             try {
@@ -68,7 +70,7 @@ const controller ={
         
                 if (userToLogin) {
                     // Usuario encontrado
-                    return res.redirect('pagoCliente');
+                    return res.render('pagoCliente', { dni: dni });
 
                 } else {
                     
@@ -83,6 +85,8 @@ const controller ={
                 });
             }
         },
+        
+        
 
 };
 
