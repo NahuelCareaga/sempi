@@ -72,7 +72,7 @@ header{
 }
 
 .liNavbar{
-    margin-left: 75px;
+    margin-left: 100px;
     color: #CBA052;
     border: solid transparent 2px;
     border-radius: 4px;
@@ -112,7 +112,7 @@ header{
     border: solid transparent 2px;
     border-radius: 5px;
     transition-duration: 0.5s;
-    margin-left: 50px;
+    margin-left: 100px;
     margin-top: 5px;
 }
 
@@ -303,7 +303,7 @@ header{
 /*HOME*/
 
 .parent {
-    width: 198.4vh;
+    width: 98.9vw;
     height: 90vh;
     overflow: hidden;
     display: flex;
@@ -333,10 +333,10 @@ header{
     text-align: center;
     z-index: 0 ;
     position: absolute;
-    top: 470px;
+    top: 500px;
     margin: 0;
     scale: 100%;
-    left: 470px;
+    left: 570px;
     padding: 30px;
     border: 2px solid transparent;
     border-radius: 5px;
@@ -345,9 +345,9 @@ header{
 .buyButton{
     font-family: poppins;
     color: white;
-    font-size: larger;
+    font-size: 30px;
     font-weight: bold;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
     border: solid transparent 1px;
     border-radius: 5px;
@@ -530,18 +530,26 @@ header{
     padding-bottom: 50px;
 }
 
-.pruebaImg1{
+.parentImg1{
     width: 360px;
     height: 300px;
-    transition-duration: 0.5s;
+    overflow: hidden;
+    display: flex;
     -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, transparent,rgba(0,0,0,0.2));
+}
+
+.pruebaImg1{
+    width: 450px;
+    height: 300px;
+    margin-left: -10px;
+    transition-duration: 0.5s;
     filter: brightness(70%);
 }
 
 .h3Animation1{
     position: absolute;
     text-align: center;
-    top: 1689px;
+    top: 1687px;
     left: 50px;
     font-size: 18px;
     font-weight: bold;
@@ -559,9 +567,18 @@ header{
     opacity: 100%;
 }
 
-.pruebaImg2{
+.parentImg2{
     width: 360px;
     height: 300px;
+    overflow: hidden;
+    display: flex;
+    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, transparent,rgba(0,0,0,0.2));
+}
+
+.pruebaImg2{
+    width: 450px;
+    height: 300px;
+    margin-left: -50px;
     transition-duration: 0.5s;
     -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, transparent,rgba(0,0,0,0.2));
     filter: brightness(70%);
@@ -570,7 +587,7 @@ header{
 .h3Animation2{
     position: absolute;
     text-align: center;
-    top: 1689px;
+    top: 1687px;
     left: 496px;
     font-size: 18px;
     font-weight: bold;
@@ -598,9 +615,18 @@ header{
     top: 1710px;
 }
 
-.pruebaImg3{
+.parentImg3{
     width: 360px;
     height: 300px;
+    overflow: hidden;
+    display: flex;
+    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, transparent,rgba(0,0,0,0.2));
+}
+
+.pruebaImg3{
+    width: 360px;
+    height: 480px;
+    margin-top: -147px;
     transition-duration: 0.5s;
     -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, transparent,rgba(0,0,0,0.2));
     filter: brightness(70%);
@@ -609,7 +635,7 @@ header{
 .h3Animation3{
     position: absolute;
     text-align: center;
-    top: 1689px;
+    top: 1687px;
     right: 50px;
     font-size: 18px;
     font-weight: bold;
@@ -751,10 +777,10 @@ header{
         text-align: center;
         z-index: 0 ;
         position: absolute;
-        top: 650px;
+        top: 700px;
         margin: 0;
         scale: 100%;
-        left: 610px;
+        left: 847px;
         padding: 30px;
         border: 2px solid transparent;
         border-radius: 5px;
@@ -763,9 +789,9 @@ header{
     .buyButton{
         font-family: poppins;
         color: white;
-        font-size: larger;
+        font-size: 30px;
         font-weight: bold;
-        padding: 10px;
+        padding: 20px;
         text-align: center;
         border: solid transparent 1px;
         border-radius: 5px;
@@ -945,12 +971,20 @@ header{
         padding-right: 50px;
         padding-bottom: 50px;
     }
-    
-    .pruebaImg1{
+
+    .parentImg1{
         width: 360px;
         height: 300px;
-        transition-duration: 0.5s;
+        overflow: hidden;
+        display: flex;
         -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, transparent,rgba(0,0,0,0.2));
+    }
+    
+    .pruebaImg1{
+        width: 450px;
+        height: 300px;
+        margin-left: -10px;
+        transition-duration: 0.5s;
         filter: brightness(70%);
     }
     
@@ -974,12 +1008,21 @@ header{
     .h3Animation1:hover{
         opacity: 100%;
     }
-    
-    .pruebaImg2{
+
+    .parentImg2{
         width: 360px;
         height: 300px;
-        transition-duration: 0.5s;
+        overflow: hidden;
+        display: flex;
         -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, transparent,rgba(0,0,0,0.2));
+    }
+
+    .pruebaImg2{
+        display: flex;
+        width: 450px;
+        height: 300px;
+        margin-left: -50px;
+        transition-duration: 0.5s;
         filter: brightness(70%);
     }
     
@@ -1014,11 +1057,20 @@ header{
         top: 1710px;
     }
     
-    .pruebaImg3{
+    .parentImg3{
         width: 360px;
         height: 300px;
-        transition-duration: 0.5s;
+        overflow: hidden;
+        display: flex;
         -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, transparent,rgba(0,0,0,0.2));
+    }
+
+    .pruebaImg3{
+        width: 360px;
+        height: 500px;
+        margin-left: -10px;
+        margin-top: -155px;
+        transition-duration: 0.5s;
         filter: brightness(70%);
     }
     
@@ -1026,13 +1078,14 @@ header{
         position: absolute;
         text-align: center;
         top: 1965px;
-        right: 50px;
+        right: 60px;
         font-size: 18px;
         font-weight: bold;
         color: white;
         text-shadow: 0 5px 0.5px rgba(0,0,0,0.55);
         background-color: #02271fa2;
         padding: 67px;
+        padding-right: 57px;
         padding-top: 100px;
         padding-bottom: 97px;
         opacity: 0%;
@@ -2326,6 +2379,8 @@ header{
         color: white;
         margin-left: 232px;
         margin-right: 232px;
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
 
     .divPerfuEuri{
