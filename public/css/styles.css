@@ -41,13 +41,14 @@ h4{
 }
 
 /*HEADER*/
-header{
+.header{
     z-index: 4;
     position: sticky;
     top: 0;
     display: flex;
     flex-direction: row;
     transition: all 0.5s;
+    justify-content: space-evenly;
 }
 
 .header-scrolled{
@@ -59,13 +60,14 @@ header{
     height: 4vh;
     width: 4vh;
     margin-top: 10px;
+    justify-content: left;
 }
 
 .olNavbar{
     list-style: none;
     display: flex;
-    gap: 9rem;
     align-items: center;
+    gap: 8rem;
 }
 
 .liNavbar{
@@ -123,85 +125,117 @@ header{
 
 .headerburger{
     display: none;
-    padding: 5px
+    background-color: #034638;
 }
 
-@media screen and (max-width: 550px) {
+*{
+    padding: 0;
+    margin: 0;
+  }
+  
+  li{
+    list-style: none;
+  }
+  
+  a{
+    color: white;
+    text-decoration: none;
+  }
+  
+  .container{
+    max-width: 1224px;
+    width: 92%;
+    margin: 0 auto;
+  }
+  
+  .navbar{
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-branding{
+    width: 5%;
+    height: 5%;
+  }
+  
+  .nav-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+  }
+  
+  .nav-link{
+    transition: 0.3s ease-out;
+  }
+  
+  .nav-link:hover{
+    color: dodgerblue;
+  }
+  
+  .hamburger{
+    display: none;
+    cursor: pointer;
+  }
+  
+  .bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: white;
+  }
+  
+  @media screen and (max-width: 550px){
 
     .header{
         display: none;
     }
-
-    .headerburger {
-        z-index: 4;
-        display: flex;
-        align-items: center;
-        gap: 36rem;
-        padding: 2rem;
-        background-color: #ececec;
-        padding-left: 0px;
-        padding-right: 0px;
-    }
     
-    .logoburger {
-        max-width: 5rem;
-        height: 7vh;
-        margin-top: 8px;
-        margin-left: 15px;
-        scale: 75%;
-    }
-
-    .abrir-menu,
-    .cerrar-menu {
+    .headerburger{
         display: block;
-        border: 0;
-        font-size: 3rem;
-        background-color: transparent;
-        cursor: pointer;
     }
 
-    .abrir-menu {
-        color: #1c1c1c;
+    .hamburger{
+      display: block;
     }
-
-    .cerrar-menu {
-        color: #ececec;
-        font-size: 4rem;
-        margin-top: 40px;
-        margin-left: 55px;
+  
+    .hamburger.active .bar:nth-child(2){
+      opacity: 0;
     }
-
-    .nav {
-        opacity: 0;
-        visibility: hidden;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        position: absolute;
-        background-color: #034638;
-        padding: 2rem;
-        padding-bottom: 2100px;
-        margin-left: 565px;
-        margin-top: 2220px;
-        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    .hamburger.active .bar:nth-child(1){
+      transform: translateY(8px) rotate(45deg);
     }
-
-    .nav.visible {
-        opacity: 1;
-        visibility: visible;
+    .hamburger.active .bar:nth-child(3){
+      transform: translateY(-8px) rotate(-45deg);
     }
-    
-    .nav-list {
-        list-style: none;
-        flex-direction: column;
-        align-items: end;
+  
+    .nav-menu{
+      position: fixed;
+      left: -100%;
+      top: 70px;
+      gap: 0;
+      flex-direction: column;
+      background-color: #034638;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
     }
-
-    .nav-list li a {
-        color: #ecececec;
+  
+    .nav-item{
+      margin: 16px 0;
     }
-}
-/*BURGER MENU*/
+  
+    .nav-menu.active{
+      left: 0;
+    }
+  }
+  
+/*CIERRE BURGER MENU*/
 
 .divMain{
     display: grid;
@@ -209,6 +243,19 @@ header{
     grid-template-rows: auto 1fr auto;
     margin-top: 0px;
 }
+
+@media screen and (max-width: 550px){
+
+    .divMain{
+        display: grid;
+        min-height: 50dvh;
+        width: 100%;
+        grid-template-rows: auto 1fr auto;
+        margin-top: 0px;
+    }   
+
+}
+
 /*HOME*/
 
 .parent {
@@ -217,27 +264,28 @@ header{
     overflow: hidden;
     display: flex;
     background-image: url(/imgs/perfume-comprar-perfume.png);
-    background-size: 85% 100%;
-    background-position: center;
+    background-size: 100% 135%;
+    background-position: top;
   }
 
 .buyDiv{
     display: flex;
-    align-items: center;
     text-align: center;
+    align-items: end;
     margin: 0 auto;
-    margin-top: 25vh;
+    margin-bottom: 2rem;
 }
 
 .buyButton{
     font-family: poppins;
     color: white;
-    font-size: 30px;
+    font-size: 180%;
     font-weight: bold;
-    padding: 20px;
+    padding: 15%;
     text-align: center;
     border: solid transparent 1px;
     border-radius: 5px;
+    margin-left: -30px;
     background-color: #7A4073;
     transition-duration: 0.4s;
     box-shadow: 0px 10px 10px rgba(0,0,0,0.55);
@@ -286,6 +334,10 @@ header{
 }
 
 .divSempi{
+    position: relative;
+    top: 68%;
+    bottom: 0;
+    left: 0;
     background-color: rgb(0, 0, 0, 0.7);
     padding-bottom: 10px;
     border-radius: 5px;
@@ -303,8 +355,6 @@ header{
 
 .h2sectionSempi{
     padding-top: 25px;
-    margin-top: 306px;
-    margin-left: 10px;
     text-align: center;
 }
 
@@ -356,8 +406,6 @@ header{
 
 .h2sectionEuri{
     padding-top: 25px;
-    margin-top: 306px;
-    margin-left: 10px;
     text-align: center;
 }
 
@@ -369,6 +417,10 @@ header{
 }
 
 .divEuri{
+    position: relative;
+    top: 68%;
+    bottom: 0;
+    left: 0;
     background-color: rgb(0, 0, 0, 0.2);
     padding-bottom: 10px;
     border-radius: 5px;
@@ -419,9 +471,12 @@ header{
     overflow: hidden;
     display: flex;
     -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, transparent,rgba(0,0,0,0.2));
+    background-image: url(/imgs/elegancia.jpg);
+    background-size: cover;
 }
 
 .pruebaImg1{
+    display: none;
     width: 450px;
     height: 300px;
     margin-left: -10px;
@@ -431,7 +486,6 @@ header{
 
 .h3Animation1{
     z-index: 4;
-    position: absolute;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
@@ -455,9 +509,13 @@ header{
     overflow: hidden;
     display: flex;
     -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, transparent,rgba(0,0,0,0.2));
+    background-image: url(/imgs/calidad.jpg);
+    background-size: cover;
+    background-position: top;
 }
 
 .pruebaImg2{
+    display: none;
     width: 450px;
     height: 300px;
     margin-left: -50px;
@@ -468,7 +526,6 @@ header{
 
 .h3Animation2{
     z-index: 4;
-    position: absolute;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
@@ -502,9 +559,14 @@ header{
     overflow: hidden;
     display: flex;
     -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, transparent,rgba(0,0,0,0.2));
+    background-image: url(/imgs/confianza.jpg);
+    background-size: cover;
+    background-position: bottom;
+    
 }
 
 .pruebaImg3{
+    display: none;
     width: 360px;
     height: 480px;
     margin-top: -147px;
@@ -515,7 +577,6 @@ header{
 
 .h3Animation3{
     z-index: 4;
-    position: absolute;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
@@ -625,54 +686,33 @@ header{
 }
 
 @media screen and (max-width: 550px) {
- 
-    .parent {
-        width: 144.5vw;
-        height: 700px;
+    
+    .parent{
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
         display: flex;
+        background-image: url(/imgs/perfume-comprar-perfume.png);
+        background-size: 100% 100%;
+        background-position: top;
       }
     
-
-    .banner{
-        width: 144.5vw;
-        height: 500px;
-        margin:0px;
-    }
-    
-    .h1Buy{
-        font-size: 20px;
-        color: #CBA052;
-        margin: 0px;
-        margin-bottom: 10px;
-        text-shadow: 5px 2px 3px black;
-    }
-    
-    .h2Buy{
-        font-size: 14px;
-        color: white;
-        margin-bottom: 25px;
-        text-shadow: 5px 2px 3px black;
-    }
-    
     .buyDiv{
+        display: flex;
         text-align: center;
-        z-index: 0 ;
-        position: absolute;
-        top:400px;
-        margin: 0;
-        scale: 100%;
-        left: 230px;
-        border: 2px solid transparent;
-        border-radius: 5px;
+        align-items: end;
+        margin: 0 auto;
+        margin-bottom: 2rem;
     }
     
     .buyButton{
         font-family: poppins;
         color: white;
-        font-size: larger;
+        font-size: 180%;
         font-weight: bold;
-        padding: 10px;
+        padding: 15%;
         text-align: center;
+        margin-left: -30px;
         border: solid transparent 1px;
         border-radius: 5px;
         background-color: #7A4073;
@@ -688,19 +728,19 @@ header{
     }
     
     .h2Perfu{
-        position: absolute;
-        font-size: 25px;
-        top: 700px;
-        left: 275px;
+        text-align: center;
+        margin-top: 14vh;
+        font-size: 250%;
+        color: #CBA052;
     }
     
     .div2Perfu{
         display: flex;
-        flex-direction: row;
-        gap: 5px;
-        margin-top: 20px;
-        margin-left: 1px;
-        width: 92.5%;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        width: 100%;
+        margin-top: 151px;
     }
     
     .sectionSempi{
@@ -708,10 +748,8 @@ header{
         background-position: center;
         height: 300px;
         width: 350px;
-        margin-left: 0px;
         background-size: cover;
         text-align: start;
-        margin-bottom: 30px;
         border: 4px solid #CBA052;
         border-radius: 2px;
         transition-duration: 0.6s;
@@ -745,8 +783,6 @@ header{
     
     .h2sectionSempi{
         padding-top: 25px;
-        margin-top: 306px;
-        margin-left: 10px;
         text-align: center;
     }
     
@@ -785,8 +821,6 @@ header{
         background-position: center;
         height: 300px;
         width: 350px;
-        margin-left: 0px;
-        margin-right: 0px;
         background-size: cover;
         text-align: start;
         border: 4px solid #CBA052;
@@ -800,8 +834,6 @@ header{
     
     .h2sectionEuri{
         padding-top: 25px;
-        margin-top: 306px;
-        margin-left: 10px;
         text-align: center;
     }
     
@@ -847,60 +879,85 @@ header{
     .divPrueba{
         display: flex;
         flex-direction: row;
-        padding-left: 0px;
-        padding-right: 0px;
         margin-bottom: 100px;
         margin-top: 125px;
         background: linear-gradient(#034638, #02271f,#034638);
-        width: 94%;
+        padding-top: 50px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 220px;
     }
     
-    .pruebaImg1{
-        width: 200px;
-        height: 160px;
-        margin-left: 10px;
-        transition-duration: 0.5s;
+    .section1{
+        width: 31%;
+        height: 20%;
+    }
+
+    .parentImg1{
+        width: 100%;
+        height: 600%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, transparent,rgba(0,0,0,0.2));
-        filter: brightness(70%);
+        background-image: url(/imgs/elegancia.jpg);
+        background-size: cover;
+        background-position: top;
     }
     
     .h3Animation1{
-        position: absolute;
+        z-index: 4;
         text-align: center;
-        top: 1689px;
-        left: 50px;
-        font-size: 10px;
+        font-size: 80%;
         font-weight: bold;
         color: white;
         text-shadow: 0 5px 0.5px rgba(1,0,0,0.55);
-        background-color: #02271fa2;
-        padding: 20px;
+        background: linear-gradient(transparent,#03463877,#03463898,#03463898, #03463898,#0346386c, transparent);
+        padding: 12%;
+        opacity: 0%;
         transition-duration: 0.3s;
     }
     
     .h3Animation1:hover{
         opacity: 100%;
     }
+
+    .section2{
+        width: 31%;
+        height: 20%;
+    }
+    
+    .parentImg2{
+        width: 100%;
+        height: 600%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, transparent,rgba(0,0,0,0.2));
+        background-image: url(/imgs/calidad.jpg);
+        background-size: cover;
+        background-position: top;
+    }
     
     .pruebaImg2{
-        width: 200px;
-        height: 160px;
+        width: 150%;
+        height: 115%;
         transition-duration: 0.5s;
         -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, transparent,rgba(0,0,0,0.2));
         filter: brightness(70%);
     }
     
     .h3Animation2{
-        position: absolute;
+        z-index: 4;
         text-align: center;
-        top: 1689px;
-        left: 296px;
-        font-size: 10px;
+        font-size: 80%;
         font-weight: bold;
         color: white;
-        text-shadow: 0 5px 0.5px rgba(1,0,0,0.55);
-        background-color: #02271fa2;
-        padding: 20px;
+        text-shadow: 0 5px 0.5px rgba(0,0,0,0.55);
+        background: linear-gradient(transparent,#03463877,#03463898,#03463898, #03463898,#0346386c, transparent);
+        padding: 12%;
         opacity: 0%;
         transition-duration: 0.3s;
     }
@@ -915,30 +972,42 @@ header{
         text-align: center;
     }
     
-    .h3Animation2:hover .pruebaH32{
-        top: 1710px;
+    .section3{
+        width: 31%;
+        height: 20%;
+    }
+
+    .parentImg3{
+        width: 100%;
+        height: 600%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, transparent,rgba(0,0,0,0.2));
+        background-image: url(/imgs/confianza.jpg);
+        background-size: cover;
+        background-position: bottom;
     }
     
     .pruebaImg3{
-        width: 200px;
-        height: 160px;
-        margin-right: 10px;
+        width: 150%;
+        height: 150%;
+        margin: 0;
         transition-duration: 0.5s;
         -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, transparent,rgba(0,0,0,0.2));
         filter: brightness(70%);
     }
     
     .h3Animation3{
-        position: absolute;
+        z-index: 4;
         text-align: center;
-        top: 1689px;
-        left: 400px;
-        font-size: 10px;
+        font-size: 80%;
         font-weight: bold;
         color: white;
+        padding: 12%;
         text-shadow: 0 5px 0.5px rgba(1,0,0,0.55);
-        background-color: #02271fa2;
-        padding: 20px;
+        background: linear-gradient(transparent,#03463877,#03463898,#03463898, #03463898,#0346386c, transparent);
         opacity: 0%;
         transition-duration: 0.3s;
     }
@@ -964,14 +1033,14 @@ header{
         font-family: poppins;
         color: #CBA052;
         border: solid #034638 3px;
-        font-size: larger;
+        font-size: 80%;
         font-weight: bold;
-        padding: 10px;
+        padding: 5px;
         text-align: center;
         border-radius: 5px;
         background-color: #034638;
         transition-duration: 0.4s;
-        margin-top: 20px;
+        margin-top: 80px;
         box-shadow: 0px 10px 10px rgba(0,0,0,0.55);
     }
     
@@ -1007,17 +1076,16 @@ header{
     .divInfoHome{
         display: flex;
         flex-direction: row;
+        justify-content: space-evenly;
         color: #808080;
         margin-bottom: 100px;
     }
     
     .h3InfoHome{
+        font-size: 100%;
         font-weight: bold;
-        font-size: 12px;
-        width: 250px;
+        width: 30%;
         text-align: center;
-        margin-left: 0px;
-        margin-right: 10px;
     }
     
     .nosotrosButton{
@@ -1039,6 +1107,7 @@ header{
         border: solid #034638 3px;
         border-radius: 5px;
     }
+    
 
 }
 /*CIERRE HOME*/
@@ -1456,6 +1525,421 @@ header{
     color: white;
 }
 
+@media screen and (max-width: 550px) {
+
+    #slider {
+        margin-top: 25px;
+        width: 90%;
+        max-width: 100%;
+        text-align: center;
+        border-radius: 5px;
+     }
+     #slider input[type=radio] {
+        display: none;
+     }
+     #slider label {
+        cursor:pointer;
+        text-decoration: none;
+     }
+     
+     #slides {
+        border: 5px solid #034638;
+        border-radius: 2px;
+        background: #034638;
+        position: relative;
+        z-index: 1;
+     }
+    
+     #overflow {
+        width: 100%;
+        overflow: hidden;
+     }
+     #slide1:checked ~ #slides .inner {
+        margin-left: 0;
+     }
+     #slide2:checked ~ #slides .inner {
+        margin-left: -100%;
+     }
+     #slide3:checked ~ #slides .inner {
+        margin-left: -200%;
+     }
+     #slide4:checked ~ #slides .inner {
+        margin-left: -300%;
+     }
+     #slides .inner {
+        transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+        width: 400%;
+        line-height: 0;
+        height: 300px;
+     }
+     #slides .slide {
+        width: 25%;
+        float:left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        color: #fff;
+     }
+     #slides .slide_1 {
+        background:  transparent;
+     }
+     #slides .slide_2 {
+        background: white;
+     }
+     #slides .slide_3 {
+        background: white;
+     }
+     #slides .slide_4 {
+        background: white;
+     }
+     #controls {
+        text-align: center;
+        margin: -180px 0 0 0;
+        width: 98%;
+        height: 50px;
+        z-index: 3;
+        position: relative;
+     }
+     #controls label {
+        transition: opacity 0.2s ease-out;
+        display: none;
+        width: 25px;
+        height: 25px;
+        opacity: .9;
+     }
+     #controls label:hover {
+        opacity: 1;
+     }
+     #slide1:checked ~ #controls label:nth-child(2),
+     #slide2:checked ~ #controls label:nth-child(3),
+     #slide3:checked ~ #controls label:nth-child(4),
+     #slide4:checked ~ #controls label:nth-child(1) {
+        background-color: #02271f;
+        float:right;
+        margin: 0 -5px 0 0;
+        border-radius: 25px;
+        display: block;
+     }
+     #slide1:checked ~ #controls label:nth-last-child(1),
+     #slide2:checked ~ #controls label:nth-last-child(4),
+     #slide3:checked ~ #controls label:nth-last-child(3),
+     #slide4:checked ~ #controls label:nth-last-child(2) {
+        background-color: #02271f;
+        float:left;
+        margin: 0 0 0 -5px;
+        border-radius: 25px;
+        display: block;
+     }
+     #bullets {
+        margin: 150px 0 0;
+        text-align: center;
+     }
+     #bullets label {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius:100%;
+        background: #ccc;
+        margin: 0 10px;
+     }
+     #slide1:checked ~ #bullets label:nth-child(1),
+     #slide2:checked ~ #bullets label:nth-child(2),
+     #slide3:checked ~ #bullets label:nth-child(3),
+     #slide4:checked ~ #bullets label:nth-child(4) {
+        background: #034638;
+     }
+     @media screen and (max-width: 900px) {
+        #slide1:checked ~ #controls label:nth-child(2),
+        #slide2:checked ~ #controls label:nth-child(3),
+        #slide3:checked ~ #controls label:nth-child(4),
+        #slide4:checked ~ #controls label:nth-child(1),
+        #slide1:checked ~ #controls label:nth-last-child(2),
+        #slide2:checked ~ #controls label:nth-last-child(3),
+        #slide3:checked ~ #controls label:nth-last-child(4),
+        #slide4:checked ~ #controls label:nth-last-child(1) {
+           margin: 0;
+        }
+        #slides {
+           max-width: calc(100% - 140px);
+           margin: 0 auto;
+        }
+     }
+    
+     #slider1 {
+        margin-top: 25px;
+        width: 70%;
+        max-width: 100%;
+        text-align: center;
+        border-radius: 5px;
+     }
+     #slider1 input[type=radio] {
+        display: none;
+     }
+     #slider1 label {
+        cursor:pointer;
+        text-decoration: none;
+     }
+     
+     #slides1 {
+        border: 5px solid #7A4073;
+        border-radius: 2px;
+        background: #7A4073;
+        position: relative;
+        z-index: 1;
+     }
+    
+     #overflow1 {
+        width: 100%;
+        overflow: hidden;
+     }
+     #slide11:checked ~ #slides1 .inner1 {
+        margin-left: 0;
+     }
+     #slide21:checked ~ #slides1 .inner1 {
+        margin-left: -100%;
+     }
+     #slide31:checked ~ #slides1 .inner1 {
+        margin-left: -200%;
+     }
+     #slide41:checked ~ #slides1 .inner1 {
+        margin-left: -300%;
+     }
+     #slides1 .inner1 {
+        transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+        width: 400%;
+        line-height: 0;
+        height: 300px;
+     }
+     #slides1 .slide {
+        width: 25%;
+        float:left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        color: #fff;
+     }
+     #slides1 .slide_11 {
+        background:  transparent;
+     }
+     #slides1 .slide_21 {
+        background: transparent;
+     }
+     #slides1 .slide_31 {
+        background: transparent;
+     }
+     #slides1 .slide_41 {
+        background: transparent;
+     }
+     #controls1 {
+        margin: -180px 0 0 0;
+        width: 100%;
+        height: 50px;
+        z-index: 2;
+        position: relative;
+     }
+     #controls1 label {
+        transition: opacity 0.2s ease-out;
+        display: none;
+        width: 25px;
+        height: 25px;
+        opacity: .9;
+     }
+     #controls1 label:hover {
+        opacity: 1;
+     }
+     #slide11:checked ~ #controls label:nth-child(2),
+     #slide21:checked ~ #controls label:nth-child(3),
+     #slide31:checked ~ #controls label:nth-child(4),
+     #slide41:checked ~ #controls label:nth-child(1) {
+        background-color: #7A4073;
+        float:right;
+        margin: 0 -50px 0 0;
+        border-radius: 25px;
+        display: block;
+     }
+     #slide11:checked ~ #controls label:nth-last-child(1),
+     #slide21:checked ~ #controls label:nth-last-child(4),
+     #slide31:checked ~ #controls label:nth-last-child(3),
+     #slide41:checked ~ #controls label:nth-last-child(2) {
+        background-color: #7A4073;
+        float:left;
+        margin: 0 0 0 -50px;
+        border-radius: 25px;
+        display: block;
+     }
+     #bullets1 {
+        margin: 150px 0 0;
+        text-align: center;
+     }
+     #bullets1 label {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius:100%;
+        background: #ccc;
+        margin: 0 10px;
+     }
+     #slide11:checked ~ #bullets label:nth-child(1),
+     #slide21:checked ~ #bullets label:nth-child(2),
+     #slide31:checked ~ #bullets label:nth-child(3),
+     #slide41:checked ~ #bullets label:nth-child(4) {
+        background: #7A4073;
+     }
+     @media screen and (max-width: 900px) {
+        #slide1:checked ~ #controls label:nth-child(2),
+        #slide2:checked ~ #controls label:nth-child(3),
+        #slide3:checked ~ #controls label:nth-child(4),
+        #slide4:checked ~ #controls label:nth-child(1),
+        #slide1:checked ~ #controls label:nth-last-child(2),
+        #slide2:checked ~ #controls label:nth-last-child(3),
+        #slide3:checked ~ #controls label:nth-last-child(4),
+        #slide4:checked ~ #controls label:nth-last-child(1) {
+           margin: 0;
+        }
+        #slides {
+           max-width: calc(100% - 140px);
+           margin: 0 auto;
+        }
+     }
+    
+    .divPerfuSempi{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 250px;
+        margin-bottom: 132px;
+    }
+    
+    .sempi1{
+        height: 100%;
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+    
+    .sempiText{
+        width: 80%;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.55);
+        border: solid 5px transparent;
+        border-radius: 5px;
+        margin: 0px;
+        margin-top: 35px;
+        background-color: #034638;
+    }
+    
+    .buySempiPerfu{
+        display: block;
+        margin: 0 auto;
+        font-family: poppins;
+        background-color: #02271f;
+        border: solid 3px transparent;
+        border-radius: 5px;
+        padding: 20px;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        font-size: 20px;
+        color: white;
+        transition-duration: 0.3s;
+        box-shadow: 0px 10px 10px rgba(0,0,0,0.55);
+    }
+    
+    .buySempiPerfu:hover{
+        background-color: #CBA052;
+        color: black;
+    }
+    
+    .h3Sempi{
+        text-align: center;
+        margin: 0px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: white;
+    }
+    .divPerfuEuri{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+    
+    .divimgsEuri1{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .euri1{
+        height: 350px;
+        width: 750px;
+        margin-left: 30px;
+        margin-right: 50px;
+        margin-bottom: 10px;
+    }
+    
+    .divimgsEuri2{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .euri2{
+        height: 200px;
+        width: 150px;
+        margin-left: 175px;
+        margin-right: 10px;
+    }
+    
+    .euri3{
+        height: 200px;
+        width: 150px;
+        margin-left: 150px;
+    }
+    
+    .euriText{
+        text-align: center;
+        width: 80%;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.55);
+        border: solid 5px transparent;
+        border-radius: 5px;
+        margin: 0px;
+        background-color: #7A4073;
+    }
+    
+    .buyEuriPerfu{
+        display: block;
+        margin: 0 auto;
+        font-family: poppins;
+        background-color: #64355f;
+        border: solid 3px transparent;
+        border-radius: 5px;
+        padding: 20px;
+        padding-right: 100px;
+        padding-left: 100px;
+        font-weight: bold;
+        font-size: 20px;
+        color: white;
+        transition-duration: 0.3s;
+        box-shadow: 0px 10px 10px rgba(0,0,0,0.55);
+    }
+    
+    .buyEuriPerfu:hover{
+        background-color: #CBA052;
+        color: white;
+    }
+    
+    .h3Euri{
+        text-align: center;
+        margin: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: white;
+    }
+
+}
+
 /*CIERRE PERFUMES*/
 
 /*SOBRE NOSOTROS*/
@@ -1463,28 +1947,52 @@ header{
 .divUs1{
     display: flex;
     flex-direction: row;
-    margin-left: 175px;
-    margin-right: 175px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 140px;
     border: solid 3px transparent;
     border-radius: 5px;
     box-shadow: 0 10px 10px rgba(0,0,0,0.55);
     margin-bottom: 50px;
 }
 
+.divUsvideo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 17%;
+    margin-right: 17%;
+    margin-top: 140px;
+    border: solid 3px transparent;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.55);
+    margin-bottom: 50px;
+}
+
+.video{
+    width: 20%;
+    overflow: hidden;
+    margin: 0;
+    border: solid 2px transparent; 
+    border-radius: 5px;
+}
+
 .infoDiv1{
+    text-align: center;
     display: flex;
     flex-direction: column;
-    margin-top: 55px;
-    margin-left: 25px;
-    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .imgNosotros1{
-    width: 300px;
+    width: 270px;
     height: 350px;
-    margin-top: 50px;
-    margin-bottom: 30px;
-    margin-right: 25px;
+    align-items: center;
     border: solid 2px transparent;
     border-radius: 5px;
 }
@@ -1497,6 +2005,82 @@ header{
     margin-left: 25px;
     border: solid 2px transparent;
     border-radius: 5px;
+}
+
+@media screen and (max-width: 550px){
+
+    .divUs1{
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        margin-left: 20px;
+        margin-right: 20px;
+        border: solid 3px transparent;
+        border-radius: 5px;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.55);
+        margin-bottom: 75px;
+    }
+
+    .divUsvideo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-left: 3.5%;
+        margin-right: 3.5%;
+        margin-top: 100px;
+        border: solid 3px transparent;
+        border-radius: 5px;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.55);
+        margin-bottom: 50px;
+    }
+    
+    .video{
+        width: 30%;
+        overflow: hidden;
+        margin-left: 20px; 
+        border: solid 2px transparent; 
+        border-radius: 5px;
+        margin: 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .infoDiv1{
+        display: flex;
+        flex-direction: column;
+        margin-left: 25px;
+        margin-right: 10px;
+    }
+
+    .h2Nosotros{
+        font-size: 100%;
+    }
+
+    .h3Nosotros{
+        font-size: 80%;
+    }
+    
+    .imgNosotros1{
+        width: 30%;
+        height: 80%;
+        margin: 0;
+        margin-top: 50px;
+        border: solid 2px transparent;
+        border-radius: 5px;
+        margin: 0;
+    }
+    
+    .imgNosotros2{
+        width: 30%;
+        height: 80%;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        border: solid 2px transparent;
+        border-radius: 5px;
+    }
+
 }
 
 /*CIERRE SOBRE NOSOTROS*/
@@ -1532,6 +2116,42 @@ header{
     color: #034638;
     margin-bottom: 50px;
     text-align: center;
+}
+
+@media screen and (max-width: 550px) {
+
+    .h1Contact{
+        margin-top: 50px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .h2Contact{
+        margin-bottom: 40px;
+        text-align: center;
+        font-size: 100%;
+    }
+    
+    .sectionContact{
+        background-color: #034638;
+        text-align: center;
+    }
+    
+    .h3ContactDiv{
+        color: #034638;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem   ;
+        margin-bottom: 70px;
+        text-align: center;
+    }
+    
+    .h3Contact{
+        color: #034638;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
 }
 
 /*CIERRE CONTACTO*/
@@ -1955,9 +2575,233 @@ header{
     border: solid #4b2847 3px;
     border-radius: 5px;
 }
+
+@media screen and (max-width: 550px){
+
+    .registerBody{
+        background: linear-gradient(#4b2847, #64355f,#7A4073, #7A4073);
+    }
+
+    .contain{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+    }
+
+    .containerCompra{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin: 0;
+        margin-bottom: 50px ;
+    }
+    
+    .register{
+        padding: 40px;
+        border: solid 5px #CBA052; 
+        background: linear-gradient(#4b2847, #64355f, #7A4073);
+        border-radius: 5px;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.55);
+        margin-right: 20px;
+        margin-bottom: 15px;
+        margin-left: 25px;
+        text-align: center;
+    }
+    
+    .mp1{
+        display: none;
+    }
+    
+    .mp2{
+        display: none;
+    }
+    
+    .detailBuy{
+        padding: 20px;
+        border: solid 5px #CBA052; 
+        background: linear-gradient(#4b2847, #64355f, #7A4073);
+        border-radius: 5px;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.55);
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    .h3Error{
+        text-align: center;
+        color: white;
+        margin-top: 55px;
+        margin-bottom: 35px;
+    }
+    
+    .h3Correct{
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        margin-top: 40px;
+        margin-bottom: 25px;
+    }
+    
+    .imgEuri{
+        width: 70%;
+        margin: 0 auto;
+        margin-bottom: 25px;
+        margin-top: 0px;
+        border: solid 0px transparent;
+        border-radius: 5px;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.55);
+    }
+    
+    .control{
+        font-family: poppins;
+        color: black;
+        border: solid #CBA052 3px;
+        font-size: large;
+        font-weight: bold;
+        padding: 5px;
+        text-align: center;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    
+    .producto{
+        text-align: center;
+        font-size: 23px;
+        margin-bottom: 10px;
+        margin-top: 5px;
+    }
+    
+    .precio1{
+        font-family: poppins;
+        font-style: normal;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 30px;
+        font-size: 30px;
+        color: rgba(255, 255, 255, 0.185);
+    }
+    
+    .precio2{
+        font-family: poppins;
+        font-style: normal;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 30px;
+        font-size: 30px;
+        color: white;
+    }
+    
+    .precio3{
+        font-family: poppins;
+        font-style: normal;
+        text-align: center;
+        font-size: 30px;
+        color: white;
+        margin-bottom: 10px;
+    }
+    
+    .formButton{
+        font-family: poppins;
+        color: white;
+        border: solid #CBA052 3px;
+        font-size: large;
+        font-weight: bold;
+        padding: 8px;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #7A4073;
+        transition-duration: 0.3s;
+    }
+    
+    .formButton:hover{
+        background-color: #CBA052;
+        color: black;
+        border: solid #4b2847 3px;
+        border-radius: 5px;
+    }
+    
+    .buyEuri1{
+        font-family: poppins;
+        background-color: #7A4073;
+        border: solid 3px #CBA052;
+        border-radius: 5px;
+        padding: 20px;
+        padding-right: 75px;
+        padding-left: 75px;
+        margin: 0;
+        font-weight: bold;
+        font-size: 20px;
+        color: white;
+        transition-duration: 0.3s;
+    }
+    
+    .buyEuri2{
+        font-family: poppins;
+        background-color: #7A4073;
+        border: solid 3px #CBA052;
+        border-radius: 5px;
+        padding: 20px;
+        padding-right: 75px;
+        padding-left: 75px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        font-weight: bold;
+        font-size: 20px;
+        color: white;
+        transition-duration: 0.3s;
+    }
+    
+    .buyEuri3{
+        font-family: poppins;
+        background-color: #7A4073;
+        border: solid 3px #CBA052;
+        border-radius: 5px;
+        padding: 10px;
+        padding-right: 35px;
+        padding-left: 35px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        font-weight: bold;
+        font-size: 20px;
+        color: white;
+        transition-duration: 0.3s;
+    }
+    
+    .buyEuri1:hover{
+        background-color: #CBA052;
+        color: black;
+        border: solid #4b2847 3px;
+        border-radius: 5px;
+    }
+    
+    .buyEuri2:hover{
+        background-color: #CBA052;
+        color: black;
+        border: solid #4b2847 3px;
+        border-radius: 5px;
+    }
+    
+    .buyEuri3:hover{
+        background-color: #CBA052;
+        color: black;
+        border: solid #4b2847 3px;
+        border-radius: 5px;
+    }
+
+}
+
 /*CIERRE REGISTRO DE CLIENTE*/
 
 /*FOOTER*/
+
+.footermobile{
+    display: none;
+}
+
 .footer{
     display: flex;
     flex-direction: row;
@@ -1965,19 +2809,20 @@ header{
     text-align: center;
     color: white;
     padding-top: 15px;
+    padding-bottom: 20px;
     background: linear-gradient( #02271f, #034638, #034638);
 }
 
 .imgFooter{
     position: absolute;
-    width: 230px;
-    height: 146px;
+    width: 180px;
     display: flex;
 }
 
 .divFooter{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     text-align: center;
     align-items: center;
     margin: 0 auto;
@@ -1988,7 +2833,7 @@ header{
     padding: 5px;
     border-radius: 5px;
     transition-duration: 0.5s;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .igImg:hover{
@@ -2000,4 +2845,54 @@ header{
 .h3Footer2{
     font-weight: bold;
     margin-top: 5px;
+}
+
+@media screen and (max-width: 550px){
+
+    .footer{
+        display: none;
+    }
+
+    .footermobile{
+        display: grid;
+        text-align: center;
+        color: white;
+        padding-top: 15px;
+        background: linear-gradient( #02271f, #034638, #034638);
+    }
+    
+    .imgFootermobile{
+        position: initial ;
+        width: 150px;
+        height: 100px;
+    }
+    
+    .divFootermobile{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    
+    .igImgmobile{
+        border: solid transparent 5px;
+        padding: 5px;
+        border-radius: 5px;
+        transition-duration: 0.5s;
+        margin: 0;
+    }
+    
+    .igImgmobile:hover{
+        background-color: antiquewhite;
+        border: solid antiquewhite 5px;
+        border-radius: 5px;
+    }
+    
+    .h3Footer2mobile{
+        font-size: 80%;
+        font-weight: bold;
+    }
+
 }
