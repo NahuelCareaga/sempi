@@ -84,7 +84,7 @@
                 <br>
 
                 <label for="dni"></label>
-                <input type="text" placeholder="Ingresá tu DNI" name="dni" class="control" id="dni" pattern="\d{7,8}" title="Debe ser un número de 7 u 8 dígitos" required><br>
+                <input type="text" placeholder="Ingresá tu DNI" name="dni" class="control" id="dni" pattern="\d{7,11}" title="Debe ser un número de 7 u 11 dígitos" required><br>
                 <% if (locals.errors && errors.dni) { %>
                     <div>
                         <p style="color: red;"><%= errors.dni.msg %></p>
